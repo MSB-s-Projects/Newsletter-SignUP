@@ -4,6 +4,7 @@ const express = require("express");
 const https = require("https");
 // importing body-parser
 const bodyParser = require("body-parser");
+require("dotenv").config();
 
 // Creating app using express
 const app = express();
@@ -50,7 +51,7 @@ app.post("/", (req, res) => {
   // options object to make api call
   const options = {
     method: "POST",
-    auth: "manobal:500d71e7787ed1a9514d7ad95f44d3d4-us17",
+    auth: `manobal:${process.env.API}`,
   };
 
   // making an api call
